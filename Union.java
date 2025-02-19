@@ -1,30 +1,15 @@
-import java.util.HashMap;
-
 public class Union {
-    public static String eval(String[] sets, char[] operators) {
-        String union = sets[0] + sets[1];
-        String result = "{" + removeDuplicate(union) + "}";
-        return result;        
-    }
-
-    public static String removeDuplicate(String union) {
-        char[] c = union.toCharArray();
-        HashMap<Integer, Character> items = new HashMap();
-        for (int i=0; i<c.length; i++) {
-            if (c[i] != ',' && items.containsValue(c[i])) { // mark the duplicate item
-                c[i] = 'X';
-            }
-            else {
-                items.put(i, c[i]);
-            }
+    public static String[] eval(String[] set1, String[] set2) {
+        String[] union = new String[set1.length + set2.length];
+        int i;
+        for (i=0; i<set1.length; i++) {
+            union[i] = set1[i];
         }
-
-        String newSet = "";
-        for (int j=0; j<union.length(); j++) {
-            if (c[j] != 'X') {
-                newSet += c[j];
-            }
+        for (int j=0; j<set2.length; j++) {
+            union[i] = set2[j];
+            i++;
         }
-        return newSet;
+        
+       return utils.removeDuplicate(union);
     }
 }
