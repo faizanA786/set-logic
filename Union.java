@@ -5,8 +5,8 @@ public class Union {
         for (i=0; i<set1.length; i++) {
             union[i] = set1[i];
         }
-        for (int j=0; j<set2.length; j++) {
-            union[i] = set2[j];
+        for (String n: set2) {
+            union[i] = n;
             i++;
         }
         

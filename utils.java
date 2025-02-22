@@ -6,27 +6,40 @@ public class utils {
 
     // }
     
-    public static String[] removeDuplicate(String[] union) {
+    public static String[] removeDuplicate(String[] set) {
         HashMap<Integer, String> items = new HashMap();
 
-        for (int i=0; i<union.length; i++) {
-            if (items.containsValue(union[i])) { // if seen before, mark the duplicate item
-                union[i] = "X";
+        for (int i=0; i<set.length; i++) {
+            if (items.containsValue(set[i])) { // if seen before, mark the duplicate item
+                set[i] = "X";
             }
             else {
-                items.put(i, union[i]);
+                items.put(i, set[i]);
             }
         }
 
         String[] newSet = new String[items.size()];
 
         int n=0;
-        for (int j=0; j<union.length; j++) {
-            if (!union[j].equals("X")) {
-                newSet[n] = union[j];
+        for (int j=0; j<set.length; j++) {
+            if (!set[j].equals("X")) {
+                newSet[n] = set[j];
                 n++;
             }
         }
         return newSet;
+    }
+
+    public static int getArrSize(String[] set, HashMap<Integer, String> items, int type) { // (0) used by intersection (1) and complement
+        int size = 0;
+        for (String n: set) {
+            if (items.containsValue(n) && type == 0) {
+                size++;
+            }
+            else if (!items.containsValue(n) && type == 1) {
+                size++;
+            }
+        }
+        return size;
     }
 }
