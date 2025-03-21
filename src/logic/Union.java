@@ -1,3 +1,4 @@
+package logic;
 public class Union {
     public static String[] eval(String[] set1, String[] set2) {
         String[] union = new String[set1.length + set2.length];
