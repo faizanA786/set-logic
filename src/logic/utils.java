@@ -29,6 +29,7 @@ public class utils {
             }
         }
         return newSet;
+        //END removeDuplicate
     }
 
     public static int getArrSize(String[] set, HashMap<Integer, String> items, int type) { // (0) used by intersection (1) and complement
@@ -42,5 +43,6 @@ public class utils {
             }
         }
         return size;
+        //END getArrSize
     }
 }

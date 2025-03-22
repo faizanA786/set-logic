@@ -25,9 +25,8 @@ public class Intersection {
             }
         }
 
-
-
         return intersection;
+        //END eval
     }
 
 }
