@@ -1,7 +1,14 @@
+/*
+ * Intersection.java
+ * Handles intersection feature
+*/
+
+package logic;
+
 import java.util.HashMap;
 
 public class Intersection {
-    public static String[] eval(String[] set1, String[] set2) {
+    public static String[] eval(String[] set1, String[] set2) { // intersection feature
         HashMap<Integer, String> items = new HashMap();
         
         for (int i=0; i<set1.length; i++) {
@@ -24,9 +31,8 @@ public class Intersection {
             }
         }
 
-
-
         return intersection;
+        //END eval
     }
 
 }

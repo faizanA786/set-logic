@@ -1,5 +1,12 @@
+/*
+ * Union.java
+ * Handles union
+*/
+
+package logic;
+
 public class Union {
-    public static String[] eval(String[] set1, String[] set2) {
+    public static String[] eval(String[] set1, String[] set2) { // joins sets together
         String[] union = new String[set1.length + set2.length];
         int i;
         for (i=0; i<set1.length; i++) {
@@ -10,6 +17,7 @@ public class Union {
             i++;
         }
         
-       return utils.removeDuplicate(union);
+        return utils.removeDuplicate(union);
+        //END eval
     }
 }

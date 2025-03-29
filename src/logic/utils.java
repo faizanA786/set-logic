@@ -1,3 +1,10 @@
+/*
+ * utils.java
+ * Utilities used by other classes
+*/
+
+package logic;
+
 import java.util.HashMap;
 
 public class utils {
@@ -6,7 +13,7 @@ public class utils {
 
     // }
     
-    public static String[] removeDuplicate(String[] set) {
+    public static String[] removeDuplicate(String[] set) { // removes duplicate vals in sets
         HashMap<Integer, String> items = new HashMap();
 
         for (int i=0; i<set.length; i++) {
@@ -28,6 +35,7 @@ public class utils {
             }
         }
         return newSet;
+        //END removeDuplicate
     }
 
     public static int getArrSize(String[] set, HashMap<Integer, String> items, int type) { // (0) used by intersection (1) and complement
@@ -41,5 +49,6 @@ public class utils {
             }
         }
         return size;
+        //END getArrSize
     }
 }
