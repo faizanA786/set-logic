@@ -1,4 +1,10 @@
+/*
+ * utils.java
+ * Utilities used by other classes
+*/
+
 package logic;
+
 import java.util.HashMap;
 
 public class utils {
@@ -7,7 +13,7 @@ public class utils {
 
     // }
     
-    public static String[] removeDuplicate(String[] set) {
+    public static String[] removeDuplicate(String[] set) { // removes duplicate vals in sets
         HashMap<Integer, String> items = new HashMap();
 
         for (int i=0; i<set.length; i++) {

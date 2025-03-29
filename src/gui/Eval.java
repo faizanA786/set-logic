@@ -1,12 +1,18 @@
+/*
+ * Eval.java
+ * Handles set evaluation window
+ */
+
 package gui;
 
+//dependancies
 import java.awt.Font;
 import java.awt.event.*;
 import javax.swing.*;
 import logic.*;
 
 public class Eval {
-    public void createMenu() {
+    public void createMenu() { // responsible for creating the menu for the set evaluation feature
         JFrame window = new JFrame("Set Evaluation");
         window.setSize(1100, 600);
         window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -62,26 +68,31 @@ public class Eval {
             public void actionPerformed(ActionEvent e) {
                 String route = (String) operation.getSelectedItem();
 
-                String[] set1 = (firstSet.getText()).split(",");
-                String[] set2 = (secondSet.getText()).split(",");
-                String[] result = null;
-
-                switch (route) {
-                    case "Union":
-                        result = Union.eval(set1, set2);
-                        break;
-                    case "Intersection":
-                        result = Intersection.eval(set1, set2);
-                        break;
-                    case "Complement":
-                        result = Complement.eval(set1, set2);
-                        break;
-                    default:
-                        break;
+                if (firstSet.getText().replaceAll("\\s+", "").equals("") || secondSet.getText().replaceAll("\\s+", "").equals("")) {
+                    JOptionPane.showMessageDialog(window, "Sets must not be left empty!");
                 }
-
-                if (result != null) {
-                    outputLabel.setText("{" + String.join(",", result) + "}");
+                else {
+                    String[] set1 = (firstSet.getText().replaceAll("\\s+", "")).split(",");
+                    String[] set2 = (secondSet.getText().replaceAll("\\s+", "")).split(",");
+                    String[] result = null;
+    
+                    switch (route) {
+                        case "Union":
+                            result = Union.eval(set1, set2);
+                            break;
+                        case "Intersection":
+                            result = Intersection.eval(set1, set2);
+                            break;
+                        case "Complement":
+                            result = Complement.eval(set1, set2);
+                            break;
+                        default:
+                            break;
+                    }
+    
+                    if (result != null) {
+                        outputLabel.setText("{" + String.join(",", result) + "}");
+                    }
                 }
             }
         });
@@ -97,6 +108,6 @@ public class Eval {
 
         window.add(mainPanel);
         window.setVisible(true);
-
+        //END createMenu
     }
 }

@@ -1,11 +1,17 @@
+/*
+ * Menu.java
+ * Links features in main window
+*/
+
 package gui;
 
+//dependancies
 import java.awt.Font;
 import java.awt.event.*;
 import javax.swing.*;
 
 public class Menu {
-    public void createMenu() {
+    public void createMenu() { // responsible for creating landing window upon launch
         JFrame window = new JFrame("Main Menu");
         window.setSize(600, 300);
         window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -37,7 +43,10 @@ public class Menu {
         buildSet.setFont(new Font("Arial", Font.BOLD, 36));
         buildSet.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                JOptionPane.showMessageDialog(window, "Work in progress!");
+                window.dispose();
+
+                Create createSet = new Create();
+                createSet.createMenu();
             }
         });
         buildPanel.add(buildSet);
@@ -47,5 +56,6 @@ public class Menu {
         main.add(buildPanel);
         window.add(main);
         window.setVisible(true);
+        //END createMenu
     }
 }

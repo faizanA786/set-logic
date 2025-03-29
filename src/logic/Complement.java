@@ -1,8 +1,14 @@
+/*
+ * Complement.java
+ * Handles the complement feature
+*/
+
 package logic;
+
 import java.util.HashMap;
 
 public class Complement {
-    public static String[] eval(String[] set1, String[] set2) {
+    public static String[] eval(String[] set1, String[] set2) { // complement feature of sets
         HashMap<Integer, String> items = new HashMap();
         for (int i=0; i<set2.length; i++) {
             if (!items.containsValue(set2[i])) {
