@@ -24,14 +24,16 @@ public class Intersection {
         for (String j: set1) {
             for (String k: set2) {
                 if (j.equals(k)) {
-                    intersection[nextFree] = j;
-                    nextFree++;
+                    if (nextFree < intersection.length) {
+                        intersection[nextFree] = j;
+                        nextFree++;
+                    }
                     break;
                 }
             }
         }
 
-        return intersection;
+        return utils.removeDuplicate(intersection);
         //END eval
     }
 
