@@ -29,7 +29,7 @@ public class utils {
 
         int n=0;
         for (int j=0; j<set.length; j++) {
-            if (!set[j].equals("X")) {
+            if (set[j] != null && !set[j].equals("X")) {
                 newSet[n] = set[j];
                 n++;
             }

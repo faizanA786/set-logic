@@ -26,7 +26,7 @@ public class Complement {
                 nextFree++;
             }
         }
-        return complement;
+        return utils.removeDuplicate(complement);
         //END eval
     }
 }
